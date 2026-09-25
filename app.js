@@ -10,7 +10,7 @@ function toast(message){$('#toast').textContent=message;$('#toast').classList.ad
 function save(){clearTimeout(saveTimer);$('#save-status').textContent='Saving…';saveTimer=setTimeout(flushSave,200)}
 function flushSave(){try{localStorage.setItem(KEY,JSON.stringify(state));$('#save-status').textContent='Saved on this device'}catch{$('#save-status').textContent='Not saved';toast('Storage is full or unavailable. Keep this tab open to preserve your notes.')}}
 window.addEventListener('pagehide',flushSave);document.addEventListener('visibilitychange',()=>{if(document.hidden)flushSave()});
-function theme(){document.body.classList.toggle('dark',state.dark);$('#theme').textContent=state.dark?'☀':'☾';$('#theme').setAttribute('aria-pressed',!!state.dark)}
+function theme(){document.body.classList.toggle('dark',state.dark);$('#theme').title=state.dark?'Switch to light mode':'Switch to dark mode';$('#theme').setAttribute('aria-label',$('#theme').title);$('#theme').setAttribute('aria-pressed',!!state.dark)}
 $('#theme').onclick=()=>{state.dark=!state.dark;theme();save()};theme();
 function point(e){const r=$('#viewport').getBoundingClientRect();return{x:(e.clientX-r.left+$('#viewport').scrollLeft)/zoom,y:(e.clientY-r.top+$('#viewport').scrollTop)/zoom}}
 function group(n){return n.stack?state.notes.filter(x=>x.stack===n.stack):[n]}

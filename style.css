@@ -12,3 +12,7 @@
 #world-size{position:relative;width:4000px;height:3000px;overflow:hidden}.panning #viewport,.panning #viewport *{cursor:grabbing!important;user-select:none!important}
 
 #editor{width:440px}#editor-handle{display:flex;align-items:center;gap:8px;width:100%;padding:5px 8px;margin-bottom:6px;border-bottom:1px solid var(--line);border-radius:5px 5px 0 0;cursor:grab;touch-action:none;user-select:none;color:var(--muted);font-size:18px}#editor-handle span{font-size:12px}#editor-handle.dragging{cursor:grabbing}
+
+.brand{display:inline-flex;align-items:center;gap:10px}.brand-icon{display:inline-flex;width:41px;height:41px;margin:0;transform:rotate(-7deg)}.brand-icon svg{width:100%;height:100%}.brand-icon .bulb-glass{fill:#fff6b2}#theme{display:grid;place-items:center}#theme svg{width:25px;height:25px}#theme{color:#806519}#theme .bulb-glass{fill:#f6d86e;filter:drop-shadow(0 0 3px #f6d86e80)}body.dark #theme{color:var(--muted)}body.dark #theme .bulb-glass{fill:none;filter:none}@media(max-width:650px){.brand-icon{width:33px;height:33px}}
+
+.brand-icon .bulb-glass{fill:#fff6b2;filter:drop-shadow(0 0 2px #ffe57a)}body.dark .brand-icon .bulb-glass{fill:none;filter:none}
